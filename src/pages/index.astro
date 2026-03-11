@@ -1564,7 +1564,7 @@
         <p>Tell us what you're running, where the friction is, and what you wish your data could tell you. We'll be direct about whether we're the right fit — and if we are, we'll outline exactly what a Blueprint Assessment would look like for your environment.</p>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <span>hello@forgemidwest.com</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0d8d5dcdcdff0d6dfc2d7d5ddd9d4c7d5c3c49ed3dfdd">[email&#160;protected]</a></span>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Region</span>
@@ -1575,34 +1575,36 @@
           <span>Within one business day</span>
         </div>
       </div>
-      <div class="contact-form">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="Alex" />
+            <input type="text" name="first-name" placeholder="Alex" />
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Johnson" />
+            <input type="text" name="last-name" placeholder="Johnson" />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Company</label>
-            <input type="text" placeholder="Your company name" />
+            <input type="text" name="company" placeholder="Your company name" />
           </div>
           <div class="form-group">
             <label>Location</label>
-            <input type="text" placeholder="City, State" />
+            <input type="text" name="location" placeholder="City, State" />
           </div>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="you@company.com" />
+          <input type="email" name="email" placeholder="you@company.com" />
         </div>
         <div class="form-group">
           <label>What's your situation?</label>
-          <select>
+          <select name="situation">
             <option value="">Select one...</option>
             <option>Evaluating NetSuite for the first time</option>
             <option>NetSuite implementation in progress</option>
@@ -1615,10 +1617,10 @@
         </div>
         <div class="form-group">
           <label>Tell us more</label>
-          <textarea rows="4" placeholder="Describe your current systems, your biggest pain point, and what you're trying to accomplish..."></textarea>
+          <textarea name="message" rows="4" placeholder="Describe your current systems, your biggest pain point, and what you're trying to accomplish..."></textarea>
         </div>
-        <button class="form-submit">Send Message →</button>
-      </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
     </div>
   </div>
 </section>
@@ -1629,11 +1631,4 @@
   <div class="footer-copy">© 2025 Forge Midwest. All rights reserved. · forgemidwest.com</div>
   <div class="footer-links">
     <a href="#services">Services</a>
-    <a href="#blueprint">Blueprint</a>
-    <a href="#midwest">Region</a>
-    <a href="#contact">Contact</a>
-  </div>
-</footer>
-
-</body>
-</html>
+    <a href="#bluep
