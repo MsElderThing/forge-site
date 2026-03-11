@@ -1,10 +1,8 @@
 // @ts-check
+import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
-import sitemap from '@astrojs/sitemap';
-
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://forgemidwest.com'
-  integrations: [sitemap()]
+  site: 'https://forgemidwest.com',
+  integrations: [sitemap()],
 });
