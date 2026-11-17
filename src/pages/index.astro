@@ -9,6 +9,8 @@
   <meta name="description" content="Forge Midwest is a NetSuite ERP consulting firm specializing in manufacturing implementation, customization, and optimization. Serving Michigan, Indiana, and the Midwest. 160+ ERP implementations. No lock-in contracts." />
   <meta name="keywords" content="NetSuite consultant Michigan, NetSuite implementation Indiana, ERP consultant manufacturer, manufacturing ERP Michigan, NetSuite manufacturing consultant, ERP implementation midwest, NetSuite consultant Elkhart Indiana, NetSuite consultant Grand Rapids, NetSuite implementation Fort Wayne, supply chain ERP consultant, NetSuite customization manufacturing, ERP optimization midwest, NetSuite consultant Kalamazoo, manufacturing ERP implementation, NetSuite integration SCADA, Forge Midwest" />
   <link rel="canonical" href="https://forgemidwest.com" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Forge Midwest" />
   <meta name="geo.region" content="US-MI" />
@@ -145,8 +147,10 @@
       height: 26px;
     }
 
-    .nav-dot {
-      color: var(--forge);
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
     }
 
     nav ul {
@@ -1158,7 +1162,12 @@
       text-decoration: none;
     }
 
-    .footer-logo span { color: var(--forge); }
+    .footer-logo img {
+      height: 30px;
+      width: auto;
+      display: block;
+      opacity: 0.85;
+    }
 
     .footer-copy {
       font-family: 'IBM Plex Mono', monospace;
@@ -1212,14 +1221,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="13,2 24,8 24,20 13,26 2,20 2,8" stroke="#d06828" stroke-width="1.5" fill="rgba(208,104,40,0.08)"/>
-        <polygon points="13,7 19,10.5 19,17.5 13,21 7,17.5 7,10.5" stroke="#d06828" stroke-width="1" fill="rgba(208,104,40,0.15)"/>
-        <circle cx="13" cy="14" r="2.5" fill="#d06828"/>
-      </svg>
-    </div>
-    FORGE<span class="nav-dot">·</span>MIDWEST
+    <img src="/forge-midwest-logo.png" alt="Forge Midwest" width="173" height="40" />
   </a>
   <ul>
     <li><a href="#bridge">The Gap</a></li>
@@ -1675,7 +1677,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="footer-logo">FORGE<span>·</span>MIDWEST</a>
+  <a href="#" class="footer-logo"><img src="/forge-midwest-logo.png" alt="Forge Midwest" width="130" height="30" /></a>
   <div class="footer-copy">© 2026 Forge Midwest. All rights reserved. · forgemidwest.com</div>
   <div class="footer-links">
     <a href="#services">Services</a>
