@@ -171,6 +171,49 @@
 
     nav ul a:hover { color: var(--glow); }
 
+    .alarm-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e5482d;
+      margin-right: 0.55rem;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(229,72,45,0.6); }
+      50% { opacity: 0.55; box-shadow: 0 0 0 6px rgba(229,72,45,0); }
+    }
+
+    nav ul a.nav-urgent { color: var(--white); }
+
+    .hero-urgent {
+      display: inline-block;
+      margin-top: 1.6rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(229,72,45,0.6);
+      padding-bottom: 0.3rem;
+    }
+
+    .hero-urgent:hover { color: var(--glow); }
+
+    .card-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--glow);
+      text-decoration: none;
+    }
+
+    .card-link:hover { color: var(--white); }
+
     .nav-cta {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.68rem;
@@ -1224,6 +1267,7 @@
     <img src="/forge-midwest-logo.png" alt="Forge Midwest" width="173" height="40" />
   </a>
   <ul>
+    <li><a href="/netsuite-rescue/" class="nav-urgent"><span class="alarm-dot"></span>ERP Emergency?</a></li>
     <li><a href="#bridge">The Gap</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#blueprint">Blueprint</a></li>
@@ -1245,6 +1289,7 @@
       <a href="#blueprint" class="btn-primary">Start with a Blueprint →</a>
       <a href="#services" class="btn-ghost">What We Do</a>
     </div>
+    <a href="/netsuite-rescue/" class="hero-urgent"><span class="alarm-dot"></span>ERP emergency? Go-live at risk? Get help now →</a>
   </div>
   <div class="hero-stat-row">
     <div class="hero-stat">
@@ -1390,6 +1435,7 @@
         <div class="service-num">06</div>
         <h3>NetSuite Rescue</h3>
         <p>Already on NetSuite and it's not working for you? We audit the system, find what's broken or misconfigured, and fix it. No full reimplementation.</p>
+        <p style="margin-top: 0.9rem;"><a href="/netsuite-rescue/" class="card-link">Go-live at risk? Start here →</a></p>
       </div>
     </div>
 
@@ -1640,14 +1686,21 @@
             <input type="text" name="location" placeholder="City, State" />
           </div>
         </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="email" placeholder="you@company.com" />
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="Optional" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="you@company.com" />
+          </div>
         </div>
         <div class="form-group">
           <label>What's your situation?</label>
           <select name="situation">
             <option value="">Select one...</option>
+            <option>ERP emergency: go-live at risk</option>
             <option>Evaluating NetSuite for the first time</option>
             <option>NetSuite implementation in progress</option>
             <option>NetSuite live but underperforming</option>

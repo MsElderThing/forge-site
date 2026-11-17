@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>ERP Emergency? NetSuite Implementation Rescue | Forge Midwest</title>
+  <meta name="description" content="Go-live is weeks away and NetSuite isn't ready? Forge Midwest comes on-site in Michigan and Indiana, works alongside your team, and gets your implementation back on track." />
+  <link rel="canonical" href="https://forgemidwest.com/netsuite-rescue/" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://forgemidwest.com/netsuite-rescue/" />
+  <meta property="og:title" content="ERP Emergency? NetSuite Implementation Rescue | Forge Midwest" />
+  <meta property="og:description" content="Go-live is weeks away and NetSuite isn't ready? We come on-site, work alongside your team, and get it working." />
+  <meta property="og:site_name" content="Forge Midwest" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0b0c;
+      --steel:   #141618;
+      --iron:    #1e2023;
+      --smoke:   #2e3136;
+      --ash:     #5a5f6a;
+      --silver:  #9ba0ac;
+      --mist:    #c8cdd8;
+      --white:   #ede9e2;
+      --ember:   #b84f1a;
+      --forge:   #d06828;
+      --glow:    #e8893c;
+      --alarm:   #e5482d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Source Serif 4', Georgia, serif;
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(10,11,12,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(208,104,40,0.15);
+    }
+
+    .nav-logo img { height: 40px; width: auto; display: block; }
+
+    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+
+    nav ul a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--glow); }
+
+    .nav-cta {
+      color: var(--black) !important;
+      background: var(--forge);
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+    }
+
+    .nav-cta:hover { background: var(--glow); }
+
+    /* HERO */
+    #hero {
+      padding: 11rem 3rem 6rem;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 30%, rgba(229,72,45,0.09) 0%, transparent 70%),
+        linear-gradient(160deg, var(--black) 0%, #0f1012 60%, #0d0e0f 100%);
+      border-bottom: 1px solid rgba(208,104,40,0.12);
+    }
+
+    .hero-inner { max-width: 900px; }
+
+    .alarm-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: rgba(229,72,45,0.14);
+      border: 1px solid rgba(229,72,45,0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+    }
+
+    .alarm-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--alarm);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(229,72,45,0.6); }
+      50% { opacity: 0.55; box-shadow: 0 0 0 7px rgba(229,72,45,0); }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 1.4rem;
+    }
+
+    h1 em { font-style: italic; color: var(--glow); }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--mist);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 2.4rem;
+      font-weight: 300;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--forge);
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--glow); transform: translateY(-1px); }
+
+    .hero-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--silver);
+    }
+
+    .hero-note a { color: var(--glow); text-decoration: none; }
+
+    /* SHARED */
+    section { position: relative; }
+
+    .inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--forge);
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    h2 em { font-style: italic; color: var(--glow); }
+
+    /* SYMPTOMS */
+    #symptoms { padding: 6rem 0; }
+
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+
+    .symptom {
+      background: var(--iron);
+      border: 1px solid var(--smoke);
+      border-left: 3px solid var(--alarm);
+      border-radius: 0 4px 4px 0;
+      padding: 1.6rem 1.8rem;
+    }
+
+    .symptom strong {
+      display: block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .symptom span { font-size: 0.92rem; color: var(--silver); line-height: 1.6; }
+
+    .symptom-close {
+      margin-top: 2.5rem;
+      font-size: 1.15rem;
+      color: var(--mist);
+      max-width: 720px;
+      font-weight: 300;
+    }
+
+    .symptom-close strong { color: var(--white); font-weight: 600; }
+
+    /* PLAN */
+    #plan {
+      padding: 6rem 0;
+      background: var(--steel);
+      border-top: 1px solid rgba(208,104,40,0.1);
+      border-bottom: 1px solid rgba(208,104,40,0.1);
+    }
+
+    .plan-intro { margin-top: 1.1rem; color: var(--silver); font-weight: 300; max-width: 640px; }
+
+    .plan-steps { margin-top: 3rem; display: flex; flex-direction: column; }
+
+    .step {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 2rem;
+      padding: 1.8rem 2rem;
+      background: var(--iron);
+      border: 1px solid var(--smoke);
+      border-bottom: none;
+    }
+
+    .step:first-child { border-radius: 6px 6px 0 0; }
+    .step:last-child { border-bottom: 1px solid var(--smoke); border-radius: 0 0 6px 6px; }
+
+    .step-when {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--glow);
+      padding-top: 0.3rem;
+    }
+
+    .step h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .step p { font-size: 0.93rem; color: var(--silver); line-height: 1.65; }
+
+    /* WHY */
+    #why { padding: 6rem 0; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.2rem 4rem;
+      margin-top: 3rem;
+    }
+
+    .why-item { border-left: 3px solid var(--forge); padding-left: 1.3rem; }
+
+    .why-item strong { display: block; font-size: 1.02rem; margin-bottom: 0.3rem; }
+
+    .why-item span { font-size: 0.9rem; color: var(--silver); line-height: 1.6; }
+
+    /* HELP FORM */
+    #help {
+      padding: 6rem 0;
+      background: var(--steel);
+      border-top: 1px solid rgba(208,104,40,0.1);
+    }
+
+    .help-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 3rem;
+    }
+
+    .help-info p {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.3rem;
+      font-weight: 300;
+    }
+
+    .help-info p strong { color: var(--white); font-weight: 600; }
+
+    .contact-detail {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--mist);
+      display: flex;
+      gap: 0.7rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-detail-label { color: var(--ash); min-width: 80px; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-group label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--iron);
+      border: 1px solid var(--smoke);
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      color: var(--white);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--forge); }
+
+    .form-group select option { background: var(--iron); }
+
+    .form-submit {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--forge);
+      border: none;
+      padding: 1.05rem 2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover { background: var(--glow); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(208,104,40,0.12);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo img { height: 30px; width: auto; display: block; opacity: 0.85; }
+
+    .footer-copy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--ash);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links { display: flex; gap: 1.8rem; }
+
+    .footer-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ash);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--forge); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul li:not(:last-child) { display: none; }
+      #hero { padding: 8rem 1.5rem 4rem; }
+      .inner { padding: 0 1.5rem; }
+      .symptom-grid, .why-grid, .help-layout { grid-template-columns: 1fr; }
+      .help-layout { gap: 3rem; }
+      .step { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1.2rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/forge-midwest-logo.png" alt="Forge Midwest" width="173" height="40" />
+  </a>
+  <ul>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#blueprint">Blueprint</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="#help" class="nav-cta">Get Help Now</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="alarm-tag"><span class="alarm-dot"></span>ERP Emergency</div>
+    <h1>Go-live is weeks away.<br><em>NetSuite isn't ready.</em></h1>
+    <p class="hero-sub">Forge Midwest comes to your plant, works alongside your team, and gets your implementation back on track. You'll hear from us within one business day.</p>
+    <div class="hero-actions">
+      <a href="#help" class="btn-primary">Get Help Now →</a>
+      <span class="hero-note">or email <a href="mailto:hello@forgemidwest.com">&#104;&#101;&#108;&#108;&#111;&#64;&#102;&#111;&#114;&#103;&#101;&#109;&#105;&#100;&#119;&#101;&#115;&#116;&#46;&#99;&#111;&#109;</a></span>
+    </div>
+  </div>
+</section>
+
+<section id="symptoms">
+  <div class="inner">
+    <div class="section-label">Sound Familiar?</div>
+    <h2>You bought NetSuite.<br>You're <em>still stuck.</em></h2>
+    <div class="symptom-grid">
+      <div class="symptom">
+        <strong>Go-live is close and your team can't run an order through the system.</strong>
+        <span>The date is set, the old system is on borrowed time, and nobody on the floor trusts the new one yet.</span>
+      </div>
+      <div class="symptom">
+        <strong>You're working with your software vendor and getting nowhere.</strong>
+        <span>They configured what was in the template, held a few calls, and left the data and the testing to you.</span>
+      </div>
+      <div class="symptom">
+        <strong>Your consultant has never seen your floor.</strong>
+        <span>Every question takes a week, every answer comes from someone new, and none of them know how you build your product.</span>
+      </div>
+      <div class="symptom">
+        <strong>You're paying for NetSuite and running the plant on spreadsheets.</strong>
+        <span>It went live on paper. Inventory, costing, and production still happen somewhere else.</span>
+      </div>
+    </div>
+    <p class="symptom-close"><strong>You need someone in the building.</strong> A person who knows NetSuite and manufacturing, sits with your team, and stays until it works.</p>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="inner">
+    <div class="section-label">What Happens Next</div>
+    <h2>How a rescue <em>works.</em></h2>
+    <p class="plan-intro">We start with what's due soonest. You pay for hours, month to month, and you can stop whenever you want.</p>
+    <div class="plan-steps">
+      <div class="step">
+        <div class="step-when">First call</div>
+        <div>
+          <h3>We find out where you stand</h3>
+          <p>Tell us your go-live date, who you're working with, and what's broken. We'll tell you straight whether we can help and what it would take.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-when">Week one</div>
+        <div>
+          <h3>We get in the room</h3>
+          <p>We join your project meetings with your vendor or partner, ask the questions that haven't been asked, and keep track of what you're still owed.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-when">Weeks one and two</div>
+        <div>
+          <h3>We check the system against your plant</h3>
+          <p>We run orders, purchasing, production, and inventory through NetSuite the way your plant runs them. Then we check your items, BOMs, customers, vendors, and opening balances before any of it goes live.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-when">End of week two</div>
+        <div>
+          <h3>You get a straight answer</h3>
+          <p>A readiness report with a clear go or no-go on your date and a ranked list of what to fix first. If the date can't be saved, we'll say so and show you the one that can.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-when">Before go-live</div>
+        <div>
+          <h3>We train your people</h3>
+          <p>Training by role, at your plant, on your data. Your team learns the screens they'll use on day one, with remote follow-up after.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-when">Go-live</div>
+        <div>
+          <h3>We're on call for cutover</h3>
+          <p>Opening balances, first orders, first production runs. We stay through the first weeks, when most of the problems show up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="inner">
+    <div class="section-label">Why Forge Midwest</div>
+    <h2>We know NetSuite.<br>We'll <em>know your team.</em></h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <strong>160+ ERP implementations</strong>
+        <span>Our founder has led more than 160 full-cycle implementations across NetSuite and Microsoft Dynamics 365. Very little about a troubled project is new to us.</span>
+      </div>
+      <div class="why-item">
+        <strong>We came from the floor</strong>
+        <span>Production planning, purchasing, and plant automation came before the ERP career. We understand what your operators and supervisors are telling us.</span>
+      </div>
+      <div class="why-item">
+        <strong>Independent</strong>
+        <span>We're not a reseller or a vendor partner. We work alongside whoever is implementing your system, and we answer to you.</span>
+      </div>
+      <div class="why-item">
+        <strong>Local and on-site</strong>
+        <span>We serve Michigan and northern Indiana, so we can be at your plant, with your people, when it counts.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="help">
+  <div class="inner">
+    <div class="section-label">Get Help Now</div>
+    <div class="help-layout">
+      <div class="help-info">
+        <h2>Tell us what's<br><em>going wrong.</em></h2>
+        <p style="margin-top: 1.4rem;">A few lines is enough: your go-live date, who's implementing, and where it's stuck. <strong>Leave a phone number and we'll call you.</strong></p>
+        <p>The first conversation is free.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <span>&#104;&#101;&#108;&#108;&#111;&#64;&#102;&#111;&#114;&#103;&#101;&#109;&#105;&#100;&#119;&#101;&#115;&#116;&#46;&#99;&#111;&#109;</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Response</span>
+          <span>Within one business day</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Area</span>
+          <span>Michigan and northern Indiana</span>
+        </div>
+      </div>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-first">First Name</label>
+            <input id="r-first" type="text" name="first-name" />
+          </div>
+          <div class="form-group">
+            <label for="r-last">Last Name</label>
+            <input id="r-last" type="text" name="last-name" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-company">Company</label>
+            <input id="r-company" type="text" name="company" />
+          </div>
+          <div class="form-group">
+            <label for="r-location">Location</label>
+            <input id="r-location" type="text" name="location" placeholder="City, State" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-phone">Phone</label>
+            <input id="r-phone" type="tel" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="r-email">Email Address</label>
+            <input id="r-email" type="email" name="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r-situation">What's your situation?</label>
+          <select id="r-situation" name="situation">
+            <option selected>ERP emergency: go-live at risk</option>
+            <option>NetSuite implementation in progress</option>
+            <option>NetSuite live but underperforming</option>
+            <option>Evaluating NetSuite for the first time</option>
+            <option>Need to integrate SCADA/MES with ERP</option>
+            <option>Looking for ongoing advisory support</option>
+            <option>Starting with a Blueprint Assessment</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="r-message">What's going wrong?</label>
+          <textarea id="r-message" name="message" rows="4" placeholder="Go-live date, who's implementing, and where it's stuck"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send It. We'll Call You →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="footer-logo"><img src="/forge-midwest-logo.png" alt="Forge Midwest" width="130" height="30" /></a>
+  <div class="footer-copy">© 2026 Forge Midwest. All rights reserved. · forgemidwest.com</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
